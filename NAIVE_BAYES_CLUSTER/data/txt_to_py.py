@@ -1,5 +1,7 @@
 import  sys,json
 
+output_file = "output.json"
+
 def get_input():
 	file_path = "data/data1.txt";
 	# file_path = raw_input("")
@@ -23,5 +25,9 @@ for line in lines:
 	myList.append(line)
 	# print line 
 # print text.split(" ")
-myList = json.JSONEncoder().encode(myList)
+myList = {"data":myList[0:len(myList)-1]}
+# myList = json.JSONEncoder().encode(myList)
+myList = json.dumps(myList, sort_keys=True, indent=4)
+outFile = open(output_file,"w");
+outFile.write(myList);
 print  type(myList)
