@@ -3,8 +3,10 @@ import  sys,json
 output_file = "output.json"
 
 def get_input():
-	file_path = "data/data1.txt";
-	# file_path = raw_input("")
+	# file_path = "data/data1.txt";
+	file_path = raw_input("Enter File Path : ")
+	global output_file
+	output_file = raw_input("Enter O/P Path  : ")
 	if (file_path == ""):
 		return get_input()
 	return file_path
